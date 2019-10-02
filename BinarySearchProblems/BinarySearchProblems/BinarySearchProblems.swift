@@ -70,7 +70,6 @@ func lastOccurrence<T: Comparable>(of value: T, in arr: [T]) -> Int? {
     var minIndex = 0
     var maxIndex = arr.count - 1
     var index: Int? = nil
-    //var index = 0
     while minIndex < maxIndex {
         let middleIndex = (minIndex + maxIndex) / 2
         if arr[middleIndex] == value {
@@ -87,7 +86,7 @@ func lastOccurrence<T: Comparable>(of value: T, in arr: [T]) -> Int? {
         while arr[index ?? 0] == value {
             index? += 1
         }
-        if let index = index { return index - 1} else {return nil}
+        if let index = index {return index - 1} else {return nil}
     }
     return lastOne()
 }
@@ -96,5 +95,25 @@ func lastOccurrence<T: Comparable>(of value: T, in arr: [T]) -> Int? {
 // 5. Given a sorted array of distinct non-negative integers, find the smallest missing number.  Your solution should work in O(log(n)) time
 
 func smallestMissingNumber(in arr: [Int]) -> Int {
-    return -1
+//    var minIndex = 0
+//    var maxIndex = arr.count - 1
+//    var index = 0
+//    while minIndex < maxIndex {
+//        let middleIndex = (minIndex + maxIndex) / 2
+//        if arr[middleIndex] == middleIndex {
+//            minIndex = middleIndex + 1
+//        }else if middleIndex < arr[middleIndex] {
+//            maxIndex = middleIndex - 1
+//        }
+//        
+//        if middleIndex != arr[middleIndex] {
+//            index = middleIndex
+//            return index
+//        }
+//        
+//    }
+    
+    
+    
+    return arr.count
 }
