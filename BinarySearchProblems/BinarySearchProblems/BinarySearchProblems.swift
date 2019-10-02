@@ -67,9 +67,29 @@ func contains(value: Int, in arr: [[Int]]) -> Bool {
 // 4. Given a sorted array of integers, find the index of the last occurrence of a given number.  Your solution should work in O(log(n)) time
 
 func lastOccurrence<T: Comparable>(of value: T, in arr: [T]) -> Int? {
-    
-    
-    return nil
+    var minIndex = 0
+    var maxIndex = arr.count - 1
+    var index: Int? = nil
+    //var index = 0
+    while minIndex < maxIndex {
+        let middleIndex = (minIndex + maxIndex) / 2
+        if arr[middleIndex] == value {
+            //minIndex = middleIndex + 1
+            index = middleIndex
+            break
+        }else if value < arr[middleIndex] {
+            maxIndex = middleIndex - 1
+        }else if value > arr[middleIndex] {
+            minIndex = middleIndex + 1
+        }
+    }
+    func lastOne()-> Int?{
+        while arr[index ?? 0] == value {
+            index? += 1
+        }
+        if let index = index { return index - 1} else {return nil}
+    }
+    return lastOne()
 }
 
 // https://www.techiedelight.com/find-smallest-missing-element-sorted-array/
